@@ -14,3 +14,9 @@ Timeline: 3 Months
 ​Projects: 1. Automated Data Cleaning AI Bot. 2. Predictive Sales Dashboard.
 ​Networking: Connect with AI Leads on LinkedIn; share 2 technical posts per week.
 ​Immediate Next Action: Upload this CoT reasoning to GitHub to finish Day 4.
+Career RoadMap -
+###Comparison & Learning
+* **Normal Prompt vs CoT Prompt:**
+  The normal prompt provided a very generic and breif career path. However, using **Chain-of-Thought (CoT) Prompting**allowed the AIto break down the logic step-by-step. This resulted in a highlycustomized, structured, and practical 3-monthroadmap with clear skill gaps and project ideas.
+  * **Key Learning:**
+    I learned that for complex planning or analytical tasks, guiding the AI to reason step-by-step explicitly improves the depth, accuracy, and quality of the final output.
