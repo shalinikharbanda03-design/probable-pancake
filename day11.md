@@ -121,3 +121,6 @@ ACHIEVEMENTS
 Corporate Academic Excellence: Consistently achieved top-tier scores ranging from 80% to 100% across all internal technical assessments and corporate learning modules.
 
 Technical Milestones: Successfully executing cloud architecture and development automation sprints within the ongoing AB Talk 60-Day Technical Challenge.
+<img width="685" height="531" alt="image" src="https://github.com/user-attachments/assets/2b5acfca-7b8a-4dce-8c40-689b727dca54" />
+<img width="608" height="430" alt="image" src="https://github.com/user-attachments/assets/7e08fba3-9ae5-4f06-98f3-3b6517d03f9b" />
+<img width="664" height="281" alt="image" src="https://github.com/user-attachments/assets/2b00d876-791b-4bfe-87b3-676bc53170df" />
