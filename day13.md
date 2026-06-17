@@ -1,61 +1,43 @@
-1. **Presentation Brief**
-   * **Title**: Profile Showcase: Shalini Kharbanda | Data & Automation Operations
-   * **Topic / Scope**: A strategic overview highlighting Shalini Kharbanda’s transition into Data Analytics and LLM Automation, translating her strong background in metrics management and instructional delivery into enterprise value.
-   * **Key Messages**: 
-     * Experienced professional with strong analytical and process-documentation roots.
-     * Upskilled in cloud ecosystems, Git/GitHub, and advanced Large Language Model prompt engineering.
-     * Highly adaptable, detail-oriented asset ready to optimize data operations pipelines.
-   * **Constraints & Assumptions**: Designed as a concise 4-slide pitch deck ensuring zero generic placeholders and using realistic transition markers.
-   * **Style Guide**: Corporate, tech-forward, and modern. Palette features deep slate text, sharp accent lines, and structured, high-readability layouts.
+Since I need real job descriptions (not just titles) to score fit and extract skill requirements properly.This one needs SQL, Power BI, Azure, ETL experience — way above entry level despite the "I" tier label. Let me check the remaining candidates.Requires 3+ years experience and intermediate SQL — not entry-level, and likely US-based (mentions "Level II" experience requirements and a US-centric healthcare compliance focus). Let me check the remaining two.Interesting one — heavy AI-tool overlap with her actual project experience (Claude AI, prompt engineering, GitHub), but it also wants Next.js, Vercel, SQL, and dashboard tools she doesn't have. Let me round out the picture with the Genpact and bp listings since they're solid large-MNC names, even though onsite.Genuinely entry-level in task description ("entry-level tasks under supervision"), but onsite in Bengaluru, which conflicts with the remote requirement. Now I have enough data to build the full analysis.This requires a Geology/Geosciences master's degree and petro-technical domain expertise — a hard mismatch despite the "entry" tag. I have enough now to build a credible analysis. Here's the full breakdown.
 
-2. **Narrative Arc**
-   The presentation begins with a high-impact professional hook establishing a clear candidate identity (Slide 1), bridges into structural core competencies and newly mastered modern toolsets (Slide 2), demonstrates applied hands-on execution via tech projects (Slide 3), and concludes by matching corporate training excellence with a strong operational call to action (Slide 4).
+## Top Opportunities
 
-3. **Slide Plan**
+| Company | Role | Location | Posted | Apply | Match Score | Why It Fits | CTC |
+|---|---|---|---|---|---|---|---|
+| **Vamstar** | Entry Data Analyst | Remote (India) | May 29, 2026 | [Apply](https://to.indeed.com/aaj2nvctypmb) | **78%** | Explicitly fresher-friendly; needs Excel/Google Sheets, attention to detail, and independent remote work — all things she already has. No SQL/Python required. Healthcare-research framing is new, but the role is built for someone exactly at her stage. | ₹4,00,000/yr (stated in posting) |
+| **RivetStays Ontario Inc.** | Data Analyst (AI) | Remote | May 14, 2026 | [Apply](https://to.indeed.com/aa7wrx9qr9yw) | **55%** | Heavy daily use of Claude/AI coding agents — direct overlap with her prompt-engineering projects and GitHub work. But it also expects Next.js, Vercel, and SQL fluency she doesn't have; this reads more "AI-native builder" than "analyst." | ₹4.6–10.3L/yr (₹38.3K–86.2K/mo) |
+| **Genpact** | Analyst – Business Data Services 5A | Bengaluru (Onsite) | May 27, 2026 | [Apply](https://to.indeed.com/aaghkflhyyvn) | **45%** | Genuinely entry-level tasks under supervision at a major MNC (140,000+ employees) — strong long-term brand and structured analytics ladder. Fails your remote requirement; flagged only because it's a near-perfect skill-level match otherwise. | Not disclosed |
+| **Nordson** | Data Analyst I – AMS | Remote | March 20, 2026 | [Apply](https://to.indeed.com/aayl4jblpsgh) | **20%** | Remote and "Analyst I" sounds junior, but the actual requirements (SQL, Power BI, Azure, ETL, Denodo, mentoring other analysts) describe a senior/mid-level analyst, not an entry-level one. | Not disclosed |
+| **Verisys** | Data Management Analyst II | Remote | May 22, 2026 | [Apply](https://to.indeed.com/aaw74vfldcst) | **15%** | Remote, but requires 3+ years client-facing experience and intermediate SQL Server skills; "II" tier confirms it's not an entry point. | Not disclosed |
+| **bp** | Data Steward | Pune (Hybrid) | June 17, 2026 | [Apply](https://to.indeed.com/aacglm6wvt4t) | **10%** | Large MNC brand appeal, but requires a Geology/Geosciences master's degree and petro-technical domain expertise — a hard mismatch unrelated to her background. Excluded from serious contention. | Not disclosed |
 
-   * **Slide 1 — "Shalini Kharbanda: Data & Automation Analyst"**
-   * **Goal**: To establish a strong, modern candidate identity and highlight immediate contact access for recruiters.
-   * **Bullets (3–6)**:
-     * Emerging professional specializing in Data Analytics and Cloud Automation workflows.
-     * Core focus on combining metric-driven tracking with advanced LLM prompt engineering.
-     * Geographically based in Greater Noida West, U.P., India.
-     * Active developer ecosystem presence on GitHub and professional networks.
-   * **Visuals**: Clean, split-layout title slide with prominent contact icons and bold typography emphasizing the core data identity.
-   * **Data/Inputs**: Contact: 7007808276 | Email: shalinikharbanda07@gmail.com | Location: Greater Noida West, U.P.
-   * **Speaker Notes**: Good morning/afternoon. Today I am showcasing my optimized professional profile. My core focus lies at the intersection of process automation, data-driven methodology, and structured problem-solving to drive organizational efficiency.
-   * **Transition**: Let's take a look at the precise skill architecture supporting this operational focus.
+I excluded several results entirely rather than table them: Capgemini's FBS roles and Hitachi Energy's BI Analyst posting were onsite and required established SQL/ERP experience; anything resembling teaching, EdTech, or BPO/calling-style support (Technical Support Analyst, CXone-related roles) was dropped per your constraints; and senior engineering roles (.NET, Python) were dropped as out of scope regardless of remote status.
 
-   * **Slide 2 — "Core Technical Competencies & Toolsets"**
-   * **Goal**: Categorize and cleanly present technical capabilities to match modern automated workflows.
-   * **Bullets (3–6)**:
-     * **Data & Automation**: Expert use of Claude AI, advanced prompt engineering, and LLM framework workflows.
-     * **Version Control**: Strong command over Git Bash, GitHub terminal operations, and live deployment on GitHub Pages.
-     * **Development & Layout**: Single-file web structures using responsive HTML5 paired with Tailwind CSS frameworks.
-     * **Office Systems**: Deep familiarity with enterprise reporting tools including MS Excel, Word, and PowerPoint.
-   * **Visuals**: A clean 2×2 grid layout dividing the tools into functional technology blocks to prevent a wall of text.
-   * **Data/Inputs**: Typing baseline capability tracking at 30-35 words per minute with high-accuracy criteria.
-   * **Speaker Notes**: My skills are built on a framework of continuous modern technology adoption. Rather than just understanding standalone platforms, I approach tools as interconnected pieces of an automation and version control pipeline.
-   * **Transition**: Now let's explore how these precise tools were applied to live, command-based technical challenges.
+## Most Commonly Required Skills Across Postings
 
-   * **Slide 3 — "Hands-On Execution: Project Portfolio"**
-   * **Goal**: Provide validation of technical adaptability through structured project execution.
-   * **Bullets (3–6)**:
-     * **Command-Based Developer Ecosystem**: Architected structural data configurations using Markdown and deployed codebases live via Git version control commands.
-     * **AI-Driven Data Planners**: Engineered automated data frameworks using precision prompt engineering methodologies to handle structured generation.
-     * **Cloud Architecture Sprints**: Developed and hosted single-file frontend web portals live via cloud automation pipelines to showcase continuous technology integration.
-   * **Visuals**: A vertical 3-part timeline or step-by-step layout using small card designs for each individual project milestone.
-   * **Data/Inputs**: Milestones actively executed within the parameters of the technical AB Talk 60-Day Challenge ecosystem.
-   * **Speaker Notes**: I believe technical skills are best proven through structured execution. My projects cover everything from raw terminal commands to complex large language model architectures, confirming that I build live, operational solutions.
-   * **Transition**: Beyond technical projects, my professional history reflects an exceptional standard of corporate accountability.
+Across all the listings pulled, a few skills repeat regardless of seniority: SQL (Server, NoSQL, or general querying) shows up in nearly every "real" data analyst posting above entry tier; Power BI or another BI/visualization tool (Tableau, Looker, Metabase) is the second most common ask; Excel/Google Sheets fluency is universal, including at the entry tier; data governance, data quality, and documentation/reporting discipline appear consistently at the analyst-II-and-up level; and cloud platform familiarity (Azure, AWS, GCP) increasingly shows up even in junior-adjacent listings.
 
-   * **Slide 4 — "Corporate Excellence & Operational Value"**
-   * **Goal**: Highlight corporate training achievements, compliance focus, and operational tracking experience.
-   * **Bullets (3–6)**:
-     * **Academic Record**: Academic excellence with a Master of Arts degree alongside a formal Bachelor of Education.
-     * **Assessment Top-Tier**: Consistently secured 80% to 100% scores across corporate learning tracks and internal assessments.
-     * **Certified Compliance**: Successfully completed GenAI Data Privacy, Cyber Security, and Malicious Software Awareness certifications.
-     * **Operational Experience**: Over 2 years driving workshops, tracking metric frameworks, and managing performance benchmarks at Pidilite Industries.
-   * **Visuals**: High-impact metrics slide featuring prominent data callouts for assessment score percentages and a clear corporate timeline.
-   * **Data/Inputs**: Top-tier assessment tracking: 80%–100% range. Corporate timeline: Pidilite Industries Limited (2024–2026).
-   * **Speaker Notes**: My background combines deep academic credentials with proven leadership in corporate settings. Having trained professionals and scored at the top tier of internal technical assessments, I bring the exact accountability needed for high-stakes data operations.
-   * **Transition**: Thank you for your time, and I welcome the opportunity to discuss how this profile aligns with your operational requirements.
+## Skill Gap Analysis
+
+Your resume's strongest points — Claude AI/prompt engineering, GitHub/Git Bash, Markdown, Tailwind/HTML — map well to the RivetStays-style "AI-native operator" role, but that's a narrow and somewhat unusual niche, not the mainstream data analyst market. For the mainstream market, the gap is consistent and matches what the earlier ATS analysis flagged: no SQL, no Python/Pandas, no BI tool (Power BI/Tableau) on the resume. Even the most "entry" roles found here (Vamstar being the cleanest exception) increasingly expect at least one of these, and anything past true-entry level (Nordson, Verisys, bp) treats SQL as table stakes, not a differentiator.
+
+## Market Demand Insights
+
+A clear pattern: genuinely remote, India-based, truly-entry-level data analyst roles are uncommon in the current market. Most remote postings tagged "entry" or "I" are either US/global-company listings with US-centric experience expectations, or they're "remote" in name but expect 2-3+ years and a specific tool stack. Meanwhile, the roles that are authentically entry-level (Genpact's, structurally) tend to be onsite at hub cities. This means your dual constraints — remote AND entry-level AND India — significantly shrink the realistic pool; Vamstar is the only listing here that cleanly satisfies all three.
+
+## Recommendations to Improve Interview Chances
+
+The single highest-leverage move is closing the SQL + Excel-to-BI gap, since it's the one skill cluster that appears in literally every analyst posting above the most basic entry tier — even a focused 2-3 week SQL fundamentals + Power BI/Tableau basics push would meaningfully widen your eligible pool beyond the Vamstar-tier roles. Second, given how rare true remote-entry-level roles are, it's worth reconsidering whether hybrid/onsite at a hub city (Pune, Bengaluru, Hyderabad) is a hard no — Genpact's listing in particular is a strong structural fit otherwise and a recognizable name for your resume. Third, for roles like RivetStays that value AI-tool fluency, lean into your Claude/prompt-engineering projects explicitly in the cover letter or application — that's a genuine differentiator most other entry-level candidates won't have, but pair it with at least foundational SQL since several of these blended roles still expect it.
+
+## Overall Fit Assessment
+
+Against your stated ₹4-6 LPA target, remote preference, and large-corporate preference: realistic fit today is narrow but not zero. Vamstar fits cleanly on compensation (₹4L, right at your floor) and remote/entry criteria, though it's a smaller scaling company rather than a large MNC. The large-MNC names that surfaced (Genpact, bp, Capgemini, Hitachi Energy) all require trading away the remote constraint. None of the remote "analyst" roles at the II/senior tier are realistically winnable yet without SQL/BI skills. The honest read for Day 13: your project-based AI/prompt-engineering work is a genuine asset for a specific slice of postings (AI-ops/automation-adjacent roles), but the core "Data Analyst" job market still gates on SQL and a BI tool — that's the gap to close next to convert this search into actual interview traction.
+<img width="705" height="356" alt="image" src="https://github.com/user-attachments/assets/8f59cf5f-3c7b-4486-9961-e4dfeb9f5570" />
+<img width="723" height="428" alt="image" src="https://github.com/user-attachments/assets/fd2b50c1-1c39-4ff0-994c-efc5f1810d50" />
+<img width="737" height="411" alt="image" src="https://github.com/user-attachments/assets/bf66b645-071a-4309-b060-f761e626406b" />
+<img width="717" height="421" alt="image" src="https://github.com/user-attachments/assets/11187295-2827-4574-8e4c-e773d3378bd8" />
+<img width="711" height="432" alt="image" src="https://github.com/user-attachments/assets/14697ad0-23a5-4f71-88ab-25e6fd5c6589" />
+<img width="741" height="359" alt="image" src="https://github.com/user-attachments/assets/90a0f0e9-68f5-44f6-9b14-b70b46d18f3d" />
+<img width="768" height="422" alt="image" src="https://github.com/user-attachments/assets/632f153b-fa76-45fe-9ad1-e5d382b3f17a" />
+<img width="729" height="428" alt="image" src="https://github.com/user-attachments/assets/eaece274-c197-4454-81c1-358e45e42f87" />
+<img width="729" height="265" alt="image" src="https://github.com/user-attachments/assets/c50f91e0-d89e-4819-9638-feb190f5a465" />
