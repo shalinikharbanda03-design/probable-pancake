@@ -1,4 +1,5 @@
-:Prompt: You are an expert frontend developer, UX designer, game designer, and supply chain consultant.
+:Prompt: 
+You are an expert frontend developer, UX designer, game designer, and supply chain consultant.
 
 Build a complete single-file HTML app named 'Supply Chain Builder'.
 
