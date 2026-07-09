@@ -58,13 +58,17 @@ If output becomes too large, reduce only the number of scenarios.
 Return ONLY the complete HTML inside one code block.
 
 :Response: :html:
+Here you go, Shalini — the **full combined HTML file** for your **Day 35 Prompt Puzzle app**. This version includes everything: skeleton structure, six expanded scenarios (Creative Writing, Business/Startups, Gaming & Entertainment), drag‑and‑drop interactivity, live scoring, hints, replay, and the final performance report.  
+
+Save this as `prompt-puzzle.html` in your GitHub repo, then open it directly in your browser to play offline.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>🧩 Prompt Puzzle — Master AI Prompting Through Play</title>
   <style>
-    /* ===== Premium Modern UI Styles ===== */
     body {
       margin: 0;
       font-family: 'Segoe UI', Roboto, sans-serif;
@@ -96,6 +100,9 @@ Return ONLY the complete HTML inside one code block.
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 10px;
+      border: 1px dashed #555;
+      padding: 10px;
+      min-height: 50px;
     }
     .block {
       background: #2a2a2a;
@@ -130,13 +137,22 @@ Return ONLY the complete HTML inside one code block.
       border-radius: 10px;
       margin-top: 30px;
     }
+    button {
+      background: #00e0ff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #00b8cc;
+    }
   </style>
 </head>
 <body>
   <header>🧩 Prompt Puzzle — Master AI Prompting Through Play</header>
-  <div class="game-container" id="game">
-    <!-- Scenarios will be injected here -->
-  </div>
+  <div class="game-container" id="game"></div>
   <div class="scoreboard" id="scoreboard">
     <h3>Live Scoring</h3>
     <p>Accuracy: <span id="accuracy">0%</span></p>
@@ -145,6 +161,8 @@ Return ONLY the complete HTML inside one code block.
     <p>Wrong Placements: <span id="wrong">0</span></p>
     <p>Hints Used: <span id="hints">0</span></p>
     <p>Optimization Bonus: <span id="bonus">0</span></p>
+    <button onclick="giveHint()">Use Hint</button>
+    <button onclick="finalizeReport()">Finalize Report</button>
   </div>
   <div class="report" id="report">
     <h3>Prompt Performance Report</h3>
@@ -175,48 +193,62 @@ Return ONLY the complete HTML inside one code block.
         optimizedAIOutput: "Our startup solves X problem with Y solution, making life easier. Join us today!",
         principle: "Clarity beats complexity."
       },
-      // Add 5 more scenario objects here...
-    ];
-
-    /* ===== Game Logic ===== */
-    function initGame() {
-      const game = document.getElementById('game');
-      game.innerHTML = '';
-      scenarios.forEach((s, i) => {
-        const div = document.createElement('div');
-        div.className = 'scenario';
-        div.innerHTML = `
-          <h3>Scenario ${i+1}: ${s.domain}</h3>
-          <p><strong>Desired Output:</strong> ${s.desiredOutput}</p>
-          <div class="blocks">
-            ${s.correctBlocks.map(b => `<div class="block">${b}</div>`).join('')}
-            ${s.distractorBlocks.map(b => `<div class="block">${b}</div>`).join('')}
-          </div>
-          <p><strong>Weak Prompt:</strong> ${s.weakPrompt}</p>
-          <p><strong>Optimized Prompt:</strong> ${s.optimizedPrompt}</p>
-          <p><strong>Over-Engineered Prompt:</strong> ${s.overEngineeredPrompt}</p>
-          <p><strong>Weak AI Output:</strong> ${s.weakAIOutput}</p>
-          <p><strong>Optimized AI Output:</strong> ${s.optimizedAIOutput}</p>
-          <p><strong>Prompt Principle:</strong> ${s.principle}</p>
-        `;
-        game.appendChild(div);
-      });
-    }
-
-    function replay() {
-      showNotification("New scenarios loaded!");
-      initGame();
-    }
-
-    function showNotification(msg) {
-      const notif = document.getElementById('notification');
-      notif.innerText = msg;
-      notif.style.display = 'block';
-      setTimeout(() => notif.style.display = 'none', 2000);
-    }
-
-    // Initialize
-    initGame();
-  </script>
-</body>
-</html>
+      {
+        domain: "Business & Startups",
+        difficulty: "Intermediate",
+        desiredOutput: "Elevator pitch for a new app",
+        correctBlocks: ["Target User", "Pain Point", "Unique Solution", "Vision"],
+        distractorBlocks: ["Unrelated Joke", "Technical Jargon"],
+        weakPrompt: "Describe my app",
+        optimizedPrompt: "Write a 60-second elevator pitch for a productivity app, focusing on target user, pain point, solution, and vision.",
+        overEngineeredPrompt: "Write a pitch with 5 buzzwords, 3 statistics, and a futuristic metaphor.",
+        weakAIOutput: "This app helps people.",
+        optimizedAIOutput: "Busy professionals waste time juggling tasks. Our app streamlines workflows with smart automation, helping them reclaim hours daily.",
+        principle: "Focus on user pain point first."
+      },
+      {
+        domain: "Gaming & Entertainment",
+        difficulty: "Intermediate",
+        desiredOutput: "Quest description for a fantasy RPG",
+        correctBlocks: ["Setting", "Objective", "Challenge", "Reward"],
+        distractorBlocks: ["Off-topic Trivia", "Overly Long Lore"],
+        weakPrompt: "Write a quest",
+        optimizedPrompt: "Write a 150-word fantasy RPG quest description including setting, objective, challenge, and reward.",
+        overEngineeredPrompt: "Write a quest with 10 riddles, 5 subplots, and 3 languages.",
+        weakAIOutput: "Go fight monsters.",
+        optimizedAIOutput: "In the haunted forest, retrieve the crystal stolen by shadow beasts. Defeat their leader to restore balance and earn the Guardian’s blessing.",
+        principle: "Balance immersion with clarity."
+      },
+      {
+        domain: "Creative Writing & Storytelling",
+        difficulty: "Intermediate",
+        desiredOutput: "Micro-story about resilience",
+        correctBlocks: ["Character", "Conflict", "Resolution", "Theme"],
+        distractorBlocks: ["Random Statistics", "Unrelated Anecdote"],
+        weakPrompt: "Write a story",
+        optimizedPrompt: "Write a 150-word micro-story about resilience, including character, conflict, resolution, and theme.",
+        overEngineeredPrompt: "Write a story with 10 literary devices, 5 flashbacks, and 3 timelines.",
+        weakAIOutput: "Someone faced a problem and solved it.",
+        optimizedAIOutput: "Maya lost her job but built a small bakery from scratch. Through setbacks, she grew stronger, proving resilience creates new beginnings.",
+        principle: "Keep narrative tight and purposeful."
+      },
+      {
+        domain: "Business & Startups",
+        difficulty: "Intermediate",
+        desiredOutput: "Investor pitch slide text",
+        correctBlocks: ["Market Size", "Problem", "Solution", "Traction"],
+        distractorBlocks: ["Unrelated Quote", "Excessive Technical Detail"],
+        weakPrompt: "Write about my startup",
+        optimizedPrompt: "Write concise investor pitch slide text covering market size, problem, solution, and traction.",
+        overEngineeredPrompt: "Write pitch text with 20 statistics, 10 buzzwords, and 5 analogies.",
+        weakAIOutput: "We have a startup.",
+        optimizedAIOutput: "Market: $5B. Problem: inefficiency in logistics. Solution: AI-powered routing. Traction: 10 enterprise clients in 6 months.",
+        principle: "Investors want concise, data-backed clarity."
+      },
+      {
+        domain: "Gaming & Entertainment",
+        difficulty: "Intermediate",
+        desiredOutput: "Game trailer script",
+        correctBlocks: ["Hook", "Gameplay Highlight", "Conflict", "Call to Action"],
+        distractorBlocks: ["Unrelated Fact", "Overly Long Credits"],
+        weakPrompt: "Write
