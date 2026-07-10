@@ -1235,3 +1235,18 @@ JS syntax checks out. The app is complete and fully self-contained (no external 
 </html>
 <img width="584" height="573" alt="image" src="https://github.com/user-attachments/assets/cac9fb3c-a6b9-4685-aa55-47f75482c6b4" />
 <img width="568" height="455" alt="image" src="https://github.com/user-attachments/assets/9af6a99f-ee14-4f1b-b1a1-6102f8eec178" />
+<img width="1013" height="585" alt="image" src="https://github.com/user-attachments/assets/b611bc5b-1f80-4132-9283-daa1d0813e74" />
+<img width="1013" height="630" alt="image" src="https://github.com/user-attachments/assets/23f3c61e-783d-4dfd-8bf1-958c47238f2a" />
+<img width="999" height="622" alt="image" src="https://github.com/user-attachments/assets/99fd8fab-6483-42f1-88ba-4603a9e963f2" />
+<img width="934" height="605" alt="image" src="https://github.com/user-attachments/assets/2f278573-9cfb-4d18-9b56-e5eef9e15dad" />
+<img width="969" height="608" alt="image" src="https://github.com/user-attachments/assets/0c8bd36b-de49-4dd7-90e2-ecd5188e55af" />
+<img width="908" height="636" alt="image" src="https://github.com/user-attachments/assets/0e0575a6-621a-481f-88ab-f08fc0c2097a" />
+<img width="936" height="601" alt="image" src="https://github.com/user-attachments/assets/d0b8042e-3dbb-4190-aa6e-3f9184c8768a" />
+<img width="936" height="603" alt="image" src="https://github.com/user-attachments/assets/998c1c3d-ef9a-4a53-b043-98370090c090" />
+<img width="935" height="693" alt="image" src="https://github.com/user-attachments/assets/aab5908b-3bd5-4cc7-a72f-be99b2183909" />
+<img width="972" height="530" alt="image" src="https://github.com/user-attachments/assets/e0263c97-e26f-410f-ba03-8b133f3bd126" />
+<img width="950" height="817" alt="image" src="https://github.com/user-attachments/assets/4ceee647-ef0b-4bd4-8c5d-16b729e61f46" />
+<img width="949" height="776" alt="image" src="https://github.com/user-attachments/assets/f584ab2f-9464-4095-bd24-d8bd5e968bf0" />
+<img width="1293" height="1056" alt="image" src="https://github.com/user-attachments/assets/e13c5034-dc0e-4ce9-968f-c0c015fdcfe2" />
+<img width="858" height="647" alt="image" src="https://github.com/user-attachments/assets/fb8a29d6-5d27-4645-83e5-8c7c60b71e35" />
+<img width="1308" height="1078" alt="image" src="https://github.com/user-attachments/assets/60de1ae9-ee2c-40a1-b583-a165ddba5cea" />
