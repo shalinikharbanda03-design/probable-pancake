@@ -67,6 +67,19 @@ Module 1: Foundations for your German Everyday Phrases Interactive Learning Stud
 
 
 :Response:
+:Style:
+<style>
+body {
+  background: linear-gradient(135deg, #6c8bff, #9b6cff, #33d69f, #ffb24d, #ff6b6b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+</style>
 <div class="module" id="module1">
   <div class="card">
     <div class="module-header">
@@ -615,7 +628,8 @@ function checkEx2() {
 }
 </script>
 ✨ With this, Module 2 (Daily Life Phrases) is complete: explanations, examples, analogy, diagram, exercise, misconception, key takeaways, and a working quiz.
-<img width="816" height="504" alt="image" src="https://github.com/user-attachments/assets/58164c76-9599-40ed-926c-f71d4303d8aa" />
-<img width="1311" height="570" alt="image" src="https://github.com/user-attachments/assets/f702c2b4-34fc-47df-a461-1fe4fb618f8f" />
-<img width="1186" height="662" alt="image" src="https://github.com/user-attachments/assets/3d274baa-6d6e-4189-ad5f-8787210bf9d3" />
-<img width="1055" height="612" alt="image" src="https://github.com/user-attachments/assets/281afdb4-8cf5-4f7d-b64d-64ed945ca51a" />
+<img width="1321" height="582" alt="image" src="https://github.com/user-attachments/assets/1f223ddd-61f6-4b50-a247-85591b8cd04e" />
+<img width="1249" height="635" alt="image" src="https://github.com/user-attachments/assets/93cf3a51-2e53-463e-8f43-c3e69cca81f2" />
+<img width="1202" height="670" alt="image" src="https://github.com/user-attachments/assets/ada88d7a-2115-4238-b7db-6db698cb3150" />
+<img width="1110" height="609" alt="image" src="https://github.com/user-attachments/assets/8420e423-dcfe-4bb0-a6c0-d50346255c92" />
+
