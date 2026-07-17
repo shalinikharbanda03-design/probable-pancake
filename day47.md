@@ -27,7 +27,7 @@ Build constraints: Single self-contained HTML file using only vanilla HTML, CSS,
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Content Intelligence Studio</title>
+  <title>Content Intelligence Studio (Offline)</title>
   <style>
     body {margin:0;font-family:Arial,sans-serif;background:#121212;color:#e0e0e0;}
     header {padding:20px;background:#1f1f1f;text-align:center;font-size:1.5em;font-weight:bold;border-bottom:1px solid #333;}
@@ -48,14 +48,13 @@ Build constraints: Single self-contained HTML file using only vanilla HTML, CSS,
   </style>
 </head>
 <body>
-  <header>📊 Content Intelligence Studio</header>
+  <header>📊 Content Intelligence Studio (Offline)</header>
   <div class="container">
     <div class="upload-section">
       <p>Upload your YouTube Video Script or Thumbnail for Deep Critical Review</p>
       <input type="file" id="fileInput" accept="image/*,.txt,.md">
       <textarea id="textInput" rows="6" placeholder="Paste your video script here..."></textarea>
       <button onclick="analyzeContent()">Analyze Content</button>
-      <button onclick="retryAnalysis()">Retry</button>
     </div>
     <div id="dashboard" class="dashboard"></div>
     <div class="card">
@@ -65,84 +64,81 @@ Build constraints: Single self-contained HTML file using only vanilla HTML, CSS,
   </div>
 
   <script>
-    let lastText="", lastFileData="";
+    const mockAnalysis = {
+      "Overall Score": {
+        score: 78,
+        text: "Your video script demonstrates strong engagement potential but needs refinement in pacing and clarity."
+      },
+      "Category Breakdown": {
+        score: 82,
+        text: "Clarity: 75%, Engagement: 85%, SEO: 80%, Visuals: 70%, Strategy: 85%"
+      },
+      "Strengths": {
+        score: 90,
+        text: "Strong hook, relatable storytelling, clear call-to-action."
+      },
+      "Weaknesses": {
+        score: 60,
+        text: "Pacing drags in the middle, thumbnail lacks contrast, keywords under-optimized."
+      },
+      "Missed Opportunities": {
+        score: 65,
+        text: "Could include trending references, add interactive prompts, and optimize end screen."
+      },
+      "Platform Recommendations": {
+        score: 80,
+        text: "Use YouTube Shorts for teasers, add pinned comment with resources, leverage community tab."
+      },
+      "Rewritten Versions": {
+        score: 85,
+        text: "Alternative intro: 'What if I told you this one tweak could double your views?'"
+      },
+      "Alternative Hooks/Titles": {
+        score: 88,
+        text: "Hooks: 'Stop scrolling — this changes everything.' Titles: '5 Secrets YouTube Doesn’t Want You to Know.'"
+      },
+      "Publishing Checklist": {
+        score: 92,
+        text: "✔ Optimized title ✔ Engaging thumbnail ✔ End screen ✔ Tags ✔ Description with links"
+      },
+      "Before-vs-After Comparison": {
+        score: 75,
+        text: "Before: Generic intro, weak thumbnail. After: Compelling hook, optimized visuals, stronger SEO."
+      },
+      "Predicted Performance Potential": {
+        score: 83,
+        text: "Estimated engagement lift: +25%, CTR improvement: +15%, subscriber growth potential: +10%."
+      },
+      "Executive Summary": {
+        score: 88,
+        text: "Overall, the content is strong with high engagement potential. Focus on pacing, thumbnail design, and SEO tweaks for maximum impact."
+      }
+    };
 
-    async function analyzeContent() {
+    function analyzeContent(){
       const dashboard=document.getElementById('dashboard');
       const log=document.getElementById('activityLog');
-      dashboard.innerHTML='<div class="loading">Running AI review workflow...</div>';
-      log.innerHTML+="\\n▶ Starting analysis...";
-
-      lastText=document.getElementById('textInput').value.trim();
-      let file=document.getElementById('fileInput').files[0];
-      lastFileData="";
-
-      if(file){
-        const reader=new FileReader();
-        reader.onload=async e=>{
-          lastFileData=e.target.result;
-          await runWorkflow(lastText,lastFileData);
-        };
-        reader.readAsDataURL(file);
-      } else {
-        await runWorkflow(lastText,null);
-      }
+      dashboard.innerHTML='<div class="loading">Simulating AI review workflow...</div>';
+      log.innerHTML+="\\n▶ Starting offline analysis...";
+      setTimeout(()=>renderMockAnalysis(),1000);
     }
 
-    async function retryAnalysis(){
-      if(lastText||lastFileData){
-        document.getElementById('activityLog').innerHTML+="\\n▶ Retrying analysis...";
-        await runWorkflow(lastText,lastFileData,true);
-      }
-    }
-
-    async function runWorkflow(text,fileData,retry=false){
+    function renderMockAnalysis(){
       const dashboard=document.getElementById('dashboard');
-      const log=document.getElementById('activityLog');
       dashboard.innerHTML="";
-
-      try{
-        const response=await fetch("https://api.anthropic.com/v1/messages",{
-          method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({
-            model:"claude-3-opus-20240229",
-            max_tokens:1500,
-            system:"You are Content Intelligence Studio. Dynamically design a multi-stage workflow to review YouTube content. Output structured sections: Overall Score, Category Breakdown, Strengths, Weaknesses, Missed Opportunities, Platform Recommendations, Rewritten Versions, Alternative Hooks/Titles, Publishing Checklist, Before-vs-After Comparison, Predicted Performance Potential, Executive Summary.",
-            messages:[
-              {role:"user",content:text||"Uploaded file content"},
-              fileData?{role:"user",content:"Image data: "+fileData}:{}
-            ]
-          })
-        });
-        const result=await response.json();
-        const analysis=result.content[0].text;
-
-        // Split sections by headings
-        const sections=analysis.split(/(?=Overall Score|Category Breakdown|Strengths|Weaknesses|Missed Opportunities|Platform Recommendations|Rewritten Versions|Alternative Hooks|Publishing Checklist|Before-vs-After|Predicted Performance|Executive Summary)/);
-
-        sections.forEach(sec=>{
-          if(sec.trim()){
-            let title=sec.split("\\n")[0];
-            let body=sec.replace(title,"");
-            let scoreMatch=body.match(/(\\d{1,3})%/);
-            let score=scoreMatch?parseInt(scoreMatch[1]):Math.floor(Math.random()*100);
-            dashboard.innerHTML+=`
-              <div class="card">
-                <h2>${title}</h2>
-                <div class="progress-bar"><div class="progress-fill" style="width:${score}%"></div></div>
-                <p>${body}</p>
-                <canvas id="chart-${title.replace(/\\s/g,'')}"></canvas>
-              </div>
-            `;
-            drawRadarChart(`chart-${title.replace(/\\s/g,'')}`,[score,80,70,60,90]);
-          }
-        });
-        log.innerHTML+="\\n✔ Workflow complete.";
-      }catch(err){
-        dashboard.innerHTML='<div class="loading">Error during analysis. Please retry.</div>';
-        log.innerHTML+="\\n✖ Error: "+err.message;
+      for(const section in mockAnalysis){
+        const data=mockAnalysis[section];
+        dashboard.innerHTML+=`
+          <div class="card">
+            <h2>${section}</h2>
+            <div class="progress-bar"><div class="progress-fill" style="width:${data.score}%"></div></div>
+            <p>${data.text}</p>
+            <canvas id="chart-${section.replace(/\\s/g,'')}"></canvas>
+          </div>
+        `;
+        drawRadarChart(`chart-${section.replace(/\\s/g,'')}`,[data.score,80,70,60,90]);
       }
+      document.getElementById('activityLog').innerHTML+="\\n✔ Offline analysis complete.";
     }
 
     function drawRadarChart(canvasId,data){
@@ -170,5 +166,7 @@ Build constraints: Single self-contained HTML file using only vanilla HTML, CSS,
     }
   </script>
 </body>
-</html>
+</html><img width="450" height="121" alt="image" src="https://github.com/user-attachments/assets/beff0ce1-994e-457a-bec4-1055f42ea22a" />
 
+<img width="1259" height="570" alt="image" src="https://github.com/user-attachments/assets/7845d436-e5d6-402e-b6de-e7d570f52876" />
+<img width="1281" height="2336" alt="image" src="https://github.com/user-attachments/assets/69bcccc4-4434-4ed5-9637-bb8b6b8e2fd4" />
