@@ -854,4 +854,5 @@ Respond with STRICT JSON ONLY. No markdown fences, no prose outside the JSON obj
 </body>
 </html>
 <img width="1287" height="1262" alt="image" src="https://github.com/user-attachments/assets/399184c2-d7e1-4b28-ab96-1ac2047db0a6" />
+<img width="1338" height="476" alt="image" src="https://github.com/user-attachments/assets/b8296b66-46de-47e5-95cc-391ac11a7631" />
 
