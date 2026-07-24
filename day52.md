@@ -154,9 +154,8 @@ graph TD
     G -->|Drafted Response| F
     F -->|Draft & Insights| B
     B -->|Analyst Reviews & Approves| H[Audit Logger - data/audit_log.csv]
-2. ---
 
-### 2. `SCHEMA.md`
+ --- 2. `SCHEMA.md`
 
 ```markdown
 # Database & Data Schema
@@ -178,8 +177,7 @@ Stores static fake member eligibility and location data.
 | `effective_date` | String (YYYY-MM-DD) | Plan start date | `"2024-01-01"` |
 
 ---
-
-## 2. Audit Log Dataset (`data/audit_log.csv`)
+2. Audit Log Dataset (`data/audit_log.csv`)
 
 Appends historical records when the analyst clicks "Approve".
 
