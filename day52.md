@@ -326,4 +326,4 @@ benefits-email-assistant/
 │
 ├── requirements.txt          # Project dependencies (streamlit, anthropic, pandas)
 ├── .gitignore                # Ignores secrets, cache, and env files
-└── README.md                 # Project overview and run instructions
+└── README.md                 # Project overview and run instructions.
