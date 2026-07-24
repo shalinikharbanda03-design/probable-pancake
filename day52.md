@@ -155,6 +155,7 @@ graph TD
     F -->|Draft & Insights| B
     B -->|Analyst Reviews & Approves| H[Audit Logger - data/audit_log.csv]
 
+ ```
  --- 2. `SCHEMA.md`
 
 ```
