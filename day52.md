@@ -157,7 +157,9 @@ graph TD
 
  --- 2. `SCHEMA.md`
 
-```markdown
+```
+
+:markdown:
 # Database & Data Schema
 
 The system uses local CSV files managed via `pandas` to maintain a lightweight, zero-database setup consistent with v1.0 requirements.
