@@ -1,0 +1,29 @@
+# UI & User Flow Design
+## Interface Layout (Single Screen Streamlit App)
+```text
++-----------------------------------------------------------------------------+
+| 📄 AI-Powered Email & Benefits Query Assistant                             |
++------------------------------------+----------------------------------------+
+| [Sidebar]                          | [Main Content Area]                    |
+| - App Status & Instructions        |                                        |
+| - EXPANDER: 📁 View Audit Logs     | 1. 📂 Email File Upload                |
+
+| (Displays CSV table + Download) | [ Browse Files (.txt/.eml) ] |
+| :--- | :--- |
+|  | 2. 🔍 Extracted Information |
+|  | - Member Name: [ Jane Doe ] |
+|  | - Date of Birth: [ 1985-06-12 ] |
+|  | - Location: [ CA ] |
+| :--- | :--- |
+|  | 3. ⚠️ Compliance & Eligibility Check |
+|  | [ Alert Box: Active | Location |
+|  | Mismatch Flagged! ] |
+| :--- | :--- |
+|  | 4. 📝 AI Drafted Reply |
+|  | +------------------------------------+ |
+|  |  | Editable Text Area |  |
+|  |  | "Dear Broker, Regarding..." |  |
+|  | +------------------------------------+ |
+|  | [ ✅ Approve & Log Action Button ] |
+
++------------------------------------+----------------------------------------+
