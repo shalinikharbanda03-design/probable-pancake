@@ -1,0 +1,52 @@
+# API & Function Specifications
+
+> **Note:** This application operates as a single-process Streamlit app. There are no external REST HTTP endpoints exposed; module functions serve as the internal API layer.
+
+## Internal Functions Breakdown
+
+### 1. File & Text Parsing
+* **Function:** `parse_email_file(uploaded_file)`
+* **Module:** `extraction.py`
+* **Purpose:** Extracts raw text content from uploaded `.txt` or `.eml` files.
+* **Input:** Streamlit `UploadedFile` object.
+* **Output:** `dict` containing `{"raw_text": str, "sender": str, "subject": str}`
+* **Error Handling:** Returns clean error string if file format is unsupported or corrupted.
+
+---
+
+### 2. Field Extraction
+* **Function:** `extract_entities(text)`
+* **Module:** `extraction.py`
+* **Purpose:** Uses regular expressions and text parsing to extract key entity fields.
+* **Input:** `text` (String)
+* **Output:** `dict` containing `{"member_name": str, "dob": str, "location": str, "query_type": str}`
+* **Validation:** Fallback to `None` or `"Not Found"` if entity extraction fails.
+
+---
+
+### 3. Compliance Check
+* **Function:** `check_eligibility(member_name, location)`
+* **Module:** `compliance_check.py`
+* **Purpose:** Checks extracted entities against `data/mock_members.csv`.
+* **Input:** `member_name` (str), `location` (str)
+* **Output:** `dict` containing `{"is_found": bool, "status": str, "has_discrepancy": bool, "flag_reason": str}`
+
+---
+
+### 4. AI Response Generation
+* **Function:** `generate_draft_response(email_text, member_info, flags)`
+* **Module:** `ai_drafting.py`
+* **Purpose:** Calls Anthropic Claude API (`claude-3-5-sonnet` / `claude-3-haiku`) to draft a HIPAA-compliant email response.
+* **Input:** Extracted fields, compliance status, and original email context.
+* **Output:** `str` (Markdown response draft)
+* **Error Handling:** Catches `anthropic.AuthenticationError` or API connection timeouts gracefully.
+
+---
+
+### 5. Audit Logging
+* **Function:** `log_approval(log_data)`
+* **Module:** `compliance_check.py` / `app.py`
+* **Purpose:** Appends approval record to `data/audit_log.csv`.
+* **Input:** `dict` matching `SCHEMA.md` audit log fields.
+* **Output:** `bool` (`True` if successfully written).
+*
