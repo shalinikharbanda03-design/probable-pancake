@@ -117,10 +117,14 @@ requirements.txt
 streamlit
 pandas
 anthropic
-
+:Screenshots:#
+### Initial Attempt & Deployment failed #
 <img width="1173" height="610" alt="image" src="https://github.com/user-attachments/assets/9934df10-ad68-452e-a12e-c72b4ad35a90" />
 <img width="486" height="533" alt="image" src="https://github.com/user-attachments/assets/fe647c06-8dc3-4e1e-8856-bd6486d6b571" />
 
 Reminder for Replit#
 
 <img width="1314" height="613" alt="image" src="https://github.com/user-attachments/assets/6df2805e-9105-41ac-ae32-ffd3ad830ea5" />
+### Fixed & Final Live Application #
+<img width="1322" height="627" alt="image" src="https://github.com/user-attachments/assets/21600257-a2d5-45f4-9cc9-b39ce45fe674" />
+
