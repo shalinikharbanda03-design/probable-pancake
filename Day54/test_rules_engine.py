@@ -5,8 +5,6 @@ Run with: python test_rules_engine.py
 
 from rules_engine import check_member
 
-# A tiny in-memory dataset used only for these tests, so they don't depend on
-# mock_data.py changing in the future.
 TEST_MEMBERS = {
     "active member": {
         "member_id": "T1", "name": "Active Member", "eligible": True,
@@ -39,42 +37,12 @@ def run_test(description, extracted_fields, expected_flags):
 
 def main():
     results = []
-
-    results.append(run_test(
-        "Member not found",
-        {"member_name": "Nobody Here", "location": None, "date": None},
-        ["Member Not Found"]
-    ))
-
-    results.append(run_test(
-        "Member name missing entirely",
-        {"member_name": None, "location": "NY", "date": None},
-        ["Member Name Missing"]
-    ))
-
-    results.append(run_test(
-        "Perfect match, no issues",
-        {"member_name": "Active Member", "location": "NY", "date": "2025-06-01"},
-        []
-    ))
-
-    results.append(run_test(
-        "Location mismatch",
-        {"member_name": "Active Member", "location": "TX", "date": None},
-        ["Location Mismatch"]
-    ))
-
-    results.append(run_test(
-        "Date outside eligibility window",
-        {"member_name": "Active Member", "location": "NY", "date": "2027-01-01"},
-        ["Outside Eligibility Window"]
-    ))
-
-    results.append(run_test(
-        "Inactive plan flagged",
-        {"member_name": "Inactive Member", "location": "CA", "date": None},
-        ["Plan Inactive"]
-    ))
+    results.append(run_test("Member not found", {"member_name": "Nobody Here", "location": None, "date": None}, ["Member Not Found"]))
+    results.append(run_test("Member name missing entirely", {"member_name": None, "location": "NY", "date": None}, ["Member Name Missing"]))
+    results.append(run_test("Perfect match, no issues", {"member_name": "Active Member", "location": "NY", "date": "2025-06-01"}, []))
+    results.append(run_test("Location mismatch", {"member_name": "Active Member", "location": "TX", "date": None}, ["Location Mismatch"]))
+    results.append(run_test("Date outside eligibility window", {"member_name": "Active Member", "location": "NY", "date": "2027-01-01"}, ["Outside Eligibility Window"]))
+    results.append(run_test("Inactive plan flagged", {"member_name": "Inactive Member", "location": "CA", "date": None}, ["Plan Inactive"]))
 
     total = len(results)
     passed = sum(results)
