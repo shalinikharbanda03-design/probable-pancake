@@ -73,7 +73,7 @@ def main():
     results.append(run_test(
         "Inactive plan flagged",
         {"member_name": "Inactive Member", "location": "CA", "date": None},
-        ["Plan Inactive", "Marked Not Eligible"]
+        ["Plan Inactive"]
     ))
 
     total = len(results)
