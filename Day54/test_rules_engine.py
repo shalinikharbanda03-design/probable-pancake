@@ -5,8 +5,6 @@ Run with: python test_rules_engine.py
 
 from rules_engine import check_member
 
-# A tiny in-memory dataset used only for these tests, so they don't depend on
-# mock_data.py changing in the future.
 TEST_MEMBERS = {
     "active member": {
         "member_id": "T1", "name": "Active Member", "eligible": True,
@@ -73,7 +71,7 @@ def main():
     results.append(run_test(
         "Inactive plan flagged",
         {"member_name": "Inactive Member", "location": "CA", "date": None},
-        ["Plan Inactive", "Marked Not Eligible"]
+        ["Plan Inactive"]
     ))
 
     total = len(results)

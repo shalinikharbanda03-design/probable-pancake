@@ -1,41 +1,31 @@
 import streamlit as st
 import pandas as pd
+from extraction import parse_email_text
+from mock_data import get_member_by_name
+from rules_engine import check_member
 
-# Page Configuration
-st.set_page_config(
-    page_title="Day 54 - Core Feature Implementation",
-    page_icon="⚡",
-    layout="wide"
-)
+st.set_page_config(page_title="Rule Engine", layout="wide")
+st.title("Email Query Assistant - Rule Engine")
 
-# Title & Description
-st.title("⚡ Day 54: Core Processing Pipeline")
-st.markdown("### Welcome to Day 54 Core Implementation Module")
+email_input = st.sidebar.text_area("Paste Email:", value="Member: Alice Smith\nLocation: NY\nDate: 2026-07-27")
 
-# Sidebar
-st.sidebar.header("Control Panel")
-user_input = st.sidebar.text_input("Enter Pipeline Input:", "Sample Data")
+if st.sidebar.button("Run Pipeline"):
+    st.subheader("1. Extraction")
+    extracted_data = parse_email_text(email_input)
+    st.json(extracted_data)
 
-# Main Content Area
-col1, col2 = st.columns(2)
+    st.subheader("2. Rule Checks")
+    result = check_member(extracted_data)
+    flags = result["flags"]
+    matched = result["matched_record"]
 
-with col1:
-    st.subheader("📥 Input Overview")
-    st.info(f"Current Input Processed: **{user_input}**")
-    
-    # Simple Processing Pipeline Simulation
-    if st.button("Run Processing Pipeline"):
-        st.success("Pipeline Executed Successfully!")
-        st.json({"status": "Success", "processed_data": user_input, "day": 54})
+    if not flags:
+        st.success("No issues found.")
+    else:
+        for f in flags:
+            st.warning(f)
 
-with col2:
-    st.subheader("📊 Execution Logs")
-    log_data = pd.DataFrame({
-        "Timestamp": ["10:00 AM", "10:05 AM", "10:10 AM"],
-        "Status": ["Initialized", "Processing", "Completed"],
-        "Module": ["Setup", "Core Engine", "Output Generator"]
-    })
-    st.dataframe(log_data, use_container_width=True)
-
-st.divider()
-st.caption("Day 54 | 10-Day Sprint Implementation")
+    if matched:
+        st.subheader("3. Matched Record")
+        st.json(matched)
+        

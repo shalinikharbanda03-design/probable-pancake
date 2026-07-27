@@ -1,24 +1,25 @@
-# Day 54: Core Feature Implementation
+# Day 54-55: Core Feature Implementation + Rule Engine
 
-## 📌 Overview
-Day 54 (Day 4 of the 10-Day Sprint) focuses on implementing the core features of the application, building upon the foundations laid in Day 53.
+## Overview
+Implemented core email extraction and a deterministic rule-based eligibility/location engine for the AI-Powered Email & Benefits Query Assistant.
 
-## 🎯 Objectives
-- Implement core backend logic and feature handlers.
-- Establish baseline UI components for core functionality.
-- Ensure proper configuration mapping between services.
+## Features
+- **Extraction (`extraction.py`)**: Regex-based parsing of member name, location, and date from raw email text.
+- **Mock Data (`mock_data.py`)**: 4 fictional member records with eligibility dates, plan status, and location.
+- **Rule Engine (`rules_engine.py`)**: Pure Python, deterministic logic — NO AI/LLM calls. Flags:
+  - Member Not Found / Member Name Missing
+  - Location Mismatch
+  - Outside Eligibility Window
+  - Plan Inactive / Plan Pending
+- **UI (`app.py`)**: Streamlit app showing extraction output, rule check flags, and matched record.
 
-## 🛠 Features Implemented Today
-- **Core Processing Pipeline**: Data flow handlers for core inputs.
-- **State Management**: Session handling for continuous flow.
-- **Error Boundaries**: Basic fallback mechanisms for operational stability.
+## Testing
+Run `python test_rules_engine.py` — all 6 rule engine tests pass independent of the UI or any AI call.
 
-## 📂 File Structure
-```text
-Day54/
-├── README.md
-├── app.py
-└── requirements.txt
-🔄 Status
-Milestone 1: Documentation & Initial Setup - Completed
-Milestone 2: Core Implementation - Pending
+## File Structure
+- `app.py` — Streamlit UI pipeline
+- `extraction.py` — regex-based entity extraction
+- `mock_data.py` — mock member dataset
+- `rules_engine.py` — deterministic eligibility/location rule engine
+- `test_rules_engine.py` — standalone rule engine tests
+- `requirements.txt` — dependencies
