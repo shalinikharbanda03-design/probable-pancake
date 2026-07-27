@@ -1,41 +1,49 @@
 import streamlit as st
 import pandas as pd
+from extraction import parse_email_text
+from mock_data import get_member_by_name
+from rules_engine import check_member
 
-# Page Configuration
-st.set_page_config(
-    page_title="Day 54 - Core Feature Implementation",
-    page_icon="⚡",
-    layout="wide"
+st.set_page_config(page_title="Day 55: Rule Engine Integration", layout="wide")
+
+st.title("⚡ AI-Powered Email Query Assistant - Rule Engine")
+st.caption("Demo data only — no real PHI, no real email integration.")
+
+st.sidebar.header("Input Panel")
+email_input = st.sidebar.text_area(
+    "Paste Email Query Here:",
+    value="Member: Alice Smith\nLocation: NY\nDate: 2026-07-27"
 )
 
-# Title & Description
-st.title("⚡ Day 54: Core Processing Pipeline")
-st.markdown("### Welcome to Day 54 Core Implementation Module")
+if st.sidebar.button("Run Processing Pipeline"):
+    st.subheader("1. Extraction Output")
+    extracted_data = parse_email_text(email_input)
+    st.json(extracted_data)
 
-# Sidebar
-st.sidebar.header("Control Panel")
-user_input = st.sidebar.text_input("Enter Pipeline Input:", "Sample Data")
+    st.subheader("2. Eligibility & Location Check (Rule-Based)")
+    check_result = check_member(extracted_data)
+    matched_record = check_result["matched_record"]
+    flags = check_result["flags"]
 
-# Main Content Area
-col1, col2 = st.columns(2)
+    if not flags:
+        st.success("No issues found. Member is eligible and details match.")
+    else:
+        for flag in flags:
+            if flag in ("Member Not Found", "Member Name Missing"):
+                st.error(f"🚫 {flag}")
+            else:
+                st.warning(f"⚠️ {flag}")
 
-with col1:
-    st.subheader("📥 Input Overview")
-    st.info(f"Current Input Processed: **{user_input}**")
-    
-    # Simple Processing Pipeline Simulation
-    if st.button("Run Processing Pipeline"):
-        st.success("Pipeline Executed Successfully!")
-        st.json({"status": "Success", "processed_data": user_input, "day": 54})
+    if matched_record:
+        st.subheader("3. Matched Member Record")
+        st.json(matched_record)
+    else:
+        st.info("No matching member record to display.")
 
-with col2:
-    st.subheader("📊 Execution Logs")
-    log_data = pd.DataFrame({
-        "Timestamp": ["10:00 AM", "10:05 AM", "10:10 AM"],
-        "Status": ["Initialized", "Processing", "Completed"],
-        "Module": ["Setup", "Core Engine", "Output Generator"]
-    })
-    st.dataframe(log_data, use_container_width=True)
-
-st.divider()
-st.caption("Day 54 | 10-Day Sprint Implementation")
+    st.subheader("4. Real-Time Execution Log")
+    log_df = pd.DataFrame([
+        {"Step": "Parsing", "Status": "Complete"},
+        {"Step": "Database Match", "Status": "Complete" if matched_record else "Not Found"},
+        {"Step": "Rule Checks", "Status": f"{len(flags)} flag(s) raised" if flags else "No flags"},
+    ])
+    st.dataframe(log_df)
