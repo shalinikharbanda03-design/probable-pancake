@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 import streamlit as st
 import pandas as pd
 import json
@@ -99,8 +99,10 @@ with col2:
 # MANDATORY FOOTER (As required by Day 56 prompt)
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray; padding: 10px;'>"
+    """
+    <div style='text-align: center; color: gray; padding: 10px;'>"
     "Built with Claude as part of the AB Talks 60-Day Claude AI Challenge."
-    "</div>", 
+    </div>, 
+    """,
     unsafe_allow_html=True
 )
