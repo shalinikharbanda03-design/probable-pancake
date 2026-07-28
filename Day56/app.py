@@ -5,13 +5,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import streamlit as st
 import pandas as pd
 import json
-import os
-try:
-    from rules_engine import check_member_eligibility
-    from drafting import call_claude_draft
-except ModuleNotFoundError:
-    from Day56.rules_engine import check_member_eligibility
-    from Day56.drafting import call_claude_draft
+
+
+from rules_engine import check_member_eligibility
+from drafting import call_claude_draft
+
 
 st.set_page_config(
     page_title="AI Email & Benefits Query Assistant",
