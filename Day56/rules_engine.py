@@ -6,7 +6,7 @@ This is what makes eligibility/location decisions auditable and compliance-safe.
 """
 
 from datetime import datetime
-from Day56.mock_data import get_member_by_name
+from mock_data import get_member_by_name
 
 
 def _parse_date(date_str):
