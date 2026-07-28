@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 """
 Rule-Based Eligibility & Location Engine
 ------------------------------------------
