@@ -97,3 +97,4 @@ st.markdown(
     "Built with Claude as part of the AB Talks 60-Day Claude AI Challenge."
     "</div>", 
     unsafe_allow_html=True
+)
