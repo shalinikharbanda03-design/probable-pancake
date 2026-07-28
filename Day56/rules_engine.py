@@ -8,9 +8,9 @@ Rule-Based Eligibility & Location Engine
 Pure deterministic Python logic. NO AI/LLM calls happen anywhere in this file.
 This is what makes eligibility/location decisions auditable and compliance-safe.
 """
-
-from datetime import datetime
-from mock_data import get_member_by_name
+try:
+    from datetime import datetime
+    from mock_data import get_member_by_name
 except ModuleNotFoundError:
     from Day56.mock_data import get_member_by_name
 

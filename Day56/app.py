@@ -6,7 +6,8 @@ import streamlit as st
 import pandas as pd
 import json
 import os
-from rules_engine import check_member_eligibility
+try:
+    from rules_engine import check_member_eligibility
     from drafting import call_claude_draft
 except ModuleNotFoundError:
     from Day56.rules_engine import check_member_eligibility
