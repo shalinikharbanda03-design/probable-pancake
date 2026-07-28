@@ -11,7 +11,8 @@ This is what makes eligibility/location decisions auditable and compliance-safe.
 
 from datetime import datetime
 from mock_data import get_member_by_name
-
+except ModuleNotFoundError:
+    from Day56.mock_data import get_member_by_name
 
 def _parse_date(date_str):
     """Convert a YYYY-MM-DD string to a date object. Returns None if invalid/missing."""
