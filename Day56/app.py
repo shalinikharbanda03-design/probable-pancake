@@ -7,7 +7,9 @@ import pandas as pd
 import json
 
 
-from rules_engine import check_member
+result = check_member(extracted_fields)
+flags = result["flags"]
+matched_record = result["matched_record"]
 from drafting import call_claude_draft
 
 
