@@ -1,27 +1,19 @@
 import sys
 import os
-
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 import streamlit as st
 import pandas as pd
 import json
-
-
-result = check_member(extracted_fields)
-flags = result["flags"]
-matched_record = result["matched_record"]
 from drafting import call_claude_draft
-
+from rules_engine import check_member
 
 st.set_page_config(
     page_title="AI Email & Benefits Query Assistant",
     page_icon="✉️",
     layout="wide"
 )
-
 st.title("✉️ AI-Powered Email & Benefits Assistant")
 st.caption("Phase 8 - Capstone MVP (Day 56)")
-
 st.divider()
 
 # Sidebar Setup
@@ -71,7 +63,9 @@ with col1:
         st.session_state["extracted_fields"] = extracted_fields
         
         # Run Rule Engine
-        flags, matched_record = check_member_eligibility(extracted_fields, mock_df)
+        result = check_member(extracted_fields)
+        flags = result["flags"]
+        matched_record = result["matched_record"]
         st.session_state["flags"] = flags
         st.session_state["matched_record"] = matched_record
         
@@ -102,9 +96,9 @@ with col2:
 st.markdown("---")
 st.markdown(
     """
-    <div style='text-align: center; color: gray; padding: 10px;'>"
-    "Built with Claude as part of the AB Talks 60-Day Claude AI Challenge."
-    </div>, 
+    <div style='text-align: center; color: gray; padding: 10px;'>
+    Built with Claude as part of the AB Talks 60-Day Claude AI Challenge.
+    </div>
     """,
     unsafe_allow_html=True
 )
