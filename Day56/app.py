@@ -7,7 +7,7 @@ import pandas as pd
 import json
 
 
-from rules_engine import check_member_eligibility
+from rules_engine import check_member
 from drafting import call_claude_draft
 
 
