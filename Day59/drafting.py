@@ -54,7 +54,7 @@ Instructions:
     status_msg = "your plan status is currently flagged as Inactive."
 elif "Plan Pending" in flags:
     status_msg = "your plan status is currently flagged as Pending."
-        status_msg = "your plan status is currently flagged as Inactive or Pending."
+        
     else:
         status_msg = "your benefits and eligibility status are active and verified."
 
