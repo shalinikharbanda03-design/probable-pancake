@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>60-Day Claude AI Build Challenge — Graduation Infographic</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(160deg, #0f1b3d 0%, #1a2b4c 55%, #2a3d6b 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+  }
+  .card {
+    width: 900px;
+    max-width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,162,39,0.4);
+    border-radius: 20px;
+    padding: 48px;
+  }
+  .header { text-align: center; margin-bottom: 36px; }
+  .logo-placeholder {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 14px;
+    border: 2px dashed #c9a227;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #c9a227aa;
+  }
+  .brand {
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #c9a227;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 34px;
+    margin: 0 0 8px;
+    background: linear-gradient(90deg, #f5d576, #c9a227);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sub { color: #b7c2e0; font-size: 15px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+  .stat {
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 20px 10px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat .num { font-size: 28px; font-weight: bold; color: #f5d576; }
+  .stat .label { font-size: 11px; color: #b7c2e0; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c9a227;
+    margin: 32px 0 14px;
+    border-bottom: 1px solid rgba(201,162,39,0.3);
+    padding-bottom: 8px;
+  }
+
+  .project-box {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid #c9a227;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+  }
+  .project-box h3 { margin: 0 0 8px; font-size: 18px; color: #fff; }
+  .project-box p { margin: 0; font-size: 14px; color: #cfd8f0; line-height: 1.6; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag {
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.4);
+    color: #f5d576;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  .timeline { display: flex; flex-direction: column; gap: 14px; }
+  .tl-item { display: flex; align-items: flex-start; gap: 14px; }
+  .tl-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #c9a227; margin-top: 5px; flex-shrink: 0;
+  }
+  .tl-text { font-size: 14px; color: #dbe2f5; line-height: 1.5; }
+  .tl-text b { color: #fff; }
+
+  .footer {
+    text-align: center;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: #9aa6c9;
+  }
+  .footer .version {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid #c9a227;
+    color: #f5d576;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo-placeholder">AB Talks</div>
+      <div class="brand">AB Talks Presents</div>
+      <h1>60 Days. 1 Challenge. 1 Graduate.</h1>
+      <div class="sub">Claude AI Build Challenge — Graduation Journey</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">60</div><div class="label">Days Built</div></div>
+      <div class="stat"><div class="num">1</div><div class="label">Capstone Project</div></div>
+      <div class="stat"><div class="num">v1.0.0</div><div class="label">Release Tag</div></div>
+      <div class="stat"><div class="num">4+</div><div class="label">Core Tech Used</div></div>
+    </div>
+
+    <div class="section-title">Capstone Project</div>
+    <div class="project-box">
+      <h3>AI-Powered Email &amp; Benefits Query Assistant</h3>
+      <p>
+        A production-grade assistant integrating Anthropic's Claude AI engine, a Streamlit UI,
+        custom business rule verification, and automated CSV audit logging for operational compliance.
+      </p>
+      <div class="tags">
+        <span class="tag">Claude AI</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Python</span>
+        <span class="tag">LLM Orchestration</span>
+        <span class="tag">Audit Logging</span>
+      </div>
+    </div>
+
+    <div class="section-title">The Journey</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-text"><b>Day 1–20:</b> Learned Claude AI fundamentals and daily build habits.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-text"><b>Day 21–40:</b> Moved into applied projects, sharpening debugging and architecture skills.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-text"><b>Day 41–59:</b> Capstone sprint — built and refined the Email & Benefits Query Assistant.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-text"><b>Day 60:</b> Graduated with a production-ready release, v1.0.0.</div></div>
+    </div>
+
+    <div class="footer">
+      Thank you to the AB Talks community for the structure, accountability, and inspiration.
+      <br>This isn't the end — it's Day 1 of what comes next.
+      <div class="version">Released v1.0.0</div>
+    </div>
+  </div>
+</body>
+</html>
