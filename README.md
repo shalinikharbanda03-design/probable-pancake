@@ -25,3 +25,15 @@ This is an MVP demo:
 - **Audit Log:** CSV-based, append-only
 
 ## Project Structure
+## Running Locally
+```bash
+pip install -r Day59/requirements.txt
+streamlit run Day59/app.py
+```
+To enable live Claude drafting, set the `ANTHROPIC_API_KEY` environment variable. Without it, the app uses a deterministic local fallback so it still works end-to-end.
+
+## Live Demo
+[AI Email & Benefits Query Assistant](https://shalinikharbanda03-design-probable-pancake-day59app-pwgisx.streamlit.app/)
+
+## Built As Part Of
+This project is the final capstone of the **AB Talks 60-Day Claude AI Challenge**, built with Claude as an AI pair programmer across a 10-day structured sprint (requirements → deterministic rules → AI drafting → UI → audit logging → polish).
