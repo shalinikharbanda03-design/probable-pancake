@@ -38,6 +38,10 @@ def check_member(extracted_fields: dict, get_member_fn=get_member_by_name) -> di
     member_name = extracted_fields.get("member_name")
     email_location = extracted_fields.get("location")
     email_date_str = extracted_fields.get("date")
+if not email_date_str:
+    dates_list = extracted_fields.get("dates")
+    if dates_list and isinstance(dates_list, list) and len(dates_list) > 0:
+        email_date_str = dates_list[0]
 
     # Rule 1: Member not found
     if not member_name:
