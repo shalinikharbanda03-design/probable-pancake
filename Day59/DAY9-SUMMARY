@@ -1,0 +1,15 @@
+# Sprint Day 9 / Day 59 — Error Handling, Polish & Edge Cases
+
+## Overview
+Upgraded the Capstone UI with production-grade error handling, input edge-case management, draft character counters, and UI disclaimers for operational safety.
+
+## Key Changes
+- **Updated Main File Path:** Streamlit deployment set to `Day59/app.py`.
+- **Character Counter:** Real-time character count feedback for generated email drafts.
+- **Safety Disclaimers:** Added demo mode and operational disclaimers in the UI sidebar.
+- **Audit Log Verification:** Ensured historic audit log entries persist alongside new manual approvals.
+
+## Status
+- Deployment: Verified Live on Streamlit Cloud
+- Testing: Passed QA and edge-case verification
+-
