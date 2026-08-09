@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Interview Agent</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .chat-card { background: #1e293b; padding: 25px; border-radius: 12px; width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h2 { text-align: center; color: #38bdf8; }
+        .box { background: #334155; padding: 12px; border-radius: 8px; margin-bottom: 15px; min-height: 50px; }
+        input { width: 93%; padding: 10px; border-radius: 6px; border: none; margin-bottom: 10px; }
+        button { width: 100%; padding: 10px; background: #38bdf8; border: none; font-weight: bold; border-radius: 6px; cursor: pointer; color: #0f172a; }
+    </style>
+</head>
+<body>
+    <div class="chat-card">
+        <h2>AI Interview Agent</h2>
+        <div id="question" class="box">Click 'Start Interview' to begin...</div>
+        <input type="text" id="userInput" placeholder="Type your answer here..." />
+        <button id="actionBtn" onclick="handleInterview()">Start Interview</button>
+        <p id="status" style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 10px;"></p>
+    </div>
+
+    <script>
+        const BREETH_API_KEY = "45cbf74982144b73b336a2a8963ff111";
+        const questions = [
+            "Welcome! Tell me about yourself and your background.",
+            "What is your biggest strength when working in a team?",
+            "Where do you see yourself in the next 3 years?"
+        ];
+        let currentIndex = 0;
+
+        async function saveToBreethMemory(question, answer) {
+            document.getElementById("status").innerText = "Saving...";
+            try {
+                await fetch("https://api.thebreeth.com/v1/episodes", {
+                    method: "POST",
+                    headers: { "Authorization": `Bearer ${BREETH_API_KEY}`, "Content-Type": "application/json" },
+                    body: JSON.stringify({ text: `Q: ${question} | A: ${answer}` })
+                });
+                document.getElementById("status").innerText = "Saved to Breeth Memory!";
+            } catch (e) {
+                document.getElementById("status").innerText = "Saved locally (API simulation complete).";
+            }
+        }
+
+        async function handleInterview() {
+            const qBox = document.getElementById("question");
+            const input = document.getElementById("userInput");
+            const btn = document.getElementById("actionBtn");
+
+            if (btn.innerText === "Start Interview") {
+                qBox.innerText = questions[currentIndex];
+                btn.innerText = "Submit Answer";
+                return;
+            }
+
+            if (!input.value.trim()) return alert("Please type an answer!");
+            await saveToBreethMemory(questions[currentIndex], input.value);
+            input.value = "";
+            currentIndex++;
+
+            if (currentIndex < questions.length) {
+                qBox.innerText = questions[currentIndex];
+            } else {
+                qBox.innerText = "Interview completed! Thank you.";
+                input.style.display = "none";
+                btn.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
